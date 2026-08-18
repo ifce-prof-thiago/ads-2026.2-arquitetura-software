@@ -1,4 +1,4 @@
-package br.edu.ifce.mn.ads.usercrud;
+package br.edu.ifce.mn.ads.usercrud.config;
 
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;

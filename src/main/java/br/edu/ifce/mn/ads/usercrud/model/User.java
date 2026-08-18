@@ -1,4 +1,4 @@
-package br.edu.ifce.mn.ads.usercrud;
+package br.edu.ifce.mn.ads.usercrud.model;
 
 import jakarta.persistence.*;
 

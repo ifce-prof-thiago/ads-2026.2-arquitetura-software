@@ -1,7 +1,8 @@
-package br.edu.ifce.mn.ads.usercrud;
+package br.edu.ifce.mn.ads.usercrud.model;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.resilience.annotation.Retryable;
 import org.springframework.stereotype.Service;
 
 import java.nio.charset.StandardCharsets;
@@ -15,6 +16,7 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
+    @Retryable(maxRetries = 3)
     public User criar(User user) {
         validate(user);
         return userRepository.save(user);
@@ -47,4 +49,5 @@ public class UserService {
         byte[] digest = md.digest(input.getBytes(StandardCharsets.UTF_8));
         return HexFormat.of().formatHex(digest);
     }
+
 }

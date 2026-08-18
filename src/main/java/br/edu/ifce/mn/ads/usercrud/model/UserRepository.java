@@ -1,4 +1,4 @@
-package br.edu.ifce.mn.ads.usercrud;
+package br.edu.ifce.mn.ads.usercrud.model;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

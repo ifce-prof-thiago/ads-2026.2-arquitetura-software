@@ -1,5 +1,8 @@
-package br.edu.ifce.mn.ads.usercrud;
+package br.edu.ifce.mn.ads.usercrud.controller;
 
+import br.edu.ifce.mn.ads.usercrud.model.User;
+import br.edu.ifce.mn.ads.usercrud.model.UserRepository;
+import br.edu.ifce.mn.ads.usercrud.model.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

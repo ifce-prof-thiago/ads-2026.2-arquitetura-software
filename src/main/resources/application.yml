@@ -3,5 +3,12 @@ spring:
     url: jdbc:postgresql://localhost:5432/crud-user
     username: postgres
     password: postgres
+    hikari:
+      minimum-idle: 20
+      maximum-pool-size: 25
+      idle-timeout: 30000
   jpa:
     show-sql: true
+  threads:
+    virtual:
+      enabled: true
