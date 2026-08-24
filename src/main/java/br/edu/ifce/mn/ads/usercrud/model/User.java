@@ -1,11 +1,11 @@
 package br.edu.ifce.mn.ads.usercrud.model;
 
+import br.edu.ifce.mn.ads.usercrud.utils.PasswordEncoder;
 import jakarta.persistence.*;
 
 @Entity
 @Table(name = "users")
 public class User {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
@@ -39,6 +39,6 @@ public class User {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = PasswordEncoder.md5(password);
     }
 }
