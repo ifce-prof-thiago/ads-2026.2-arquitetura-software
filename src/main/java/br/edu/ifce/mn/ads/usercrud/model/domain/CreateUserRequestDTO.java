@@ -1,6 +1,6 @@
 package br.edu.ifce.mn.ads.usercrud.model.domain;
 
-public record UserRequestDTO(
+public record CreateUserRequestDTO(
         String username,
         String password
 ) {

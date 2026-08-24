@@ -8,25 +8,25 @@ import org.springframework.resilience.annotation.Retryable;
 import org.springframework.stereotype.Service;
 
 @Service
-public class UpdateUserService {
+public class UpdateUserFeature {
 
     @Autowired
     private UserRepository repository;
 
     @Retryable(maxRetries = 3)
-    public UserResponseDTO update(Long id, UserDomain userDomain) {
+    public UpdateUserResponseDTO update(Long id, UpdateUserRequestDTO request) {
         User user = repository.findById(id).orElseThrow(
                 () -> new RuntimeException("User not found with id " + id)
         );
-        boolean hasOtherUser = repository.existsByIdNotAndUsername(userDomain.id(), userDomain.username());
+        UserDomain userDomain = request.toUserDomain(user.getPassword());
+        boolean hasOtherUser = repository.existsByIdNotAndUsername(id, userDomain.username());
         if (hasOtherUser) {
             throw new RuntimeException("User with username " + userDomain.username() + " already exists");
         }
         user.setUsername(userDomain.username());
         User userSaved = repository.save(user);
-        return new UserResponseDTO(
-                userSaved.getId(),
-                "Usuário atualizado com sucesso"
+        return new UpdateUserResponseDTO(
+                userSaved.getId()
         );
     }
 }

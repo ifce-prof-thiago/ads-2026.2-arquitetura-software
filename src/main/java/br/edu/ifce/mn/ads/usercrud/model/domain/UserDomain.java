@@ -9,7 +9,7 @@ public record UserDomain(
         if (username == null || username.length() < 3 || username.length() > 50) {
             throw new RuntimeException("Invalid username");
         }
-        if (password == null || password.length() < 8 || password.length() > 15) {
+        if (password == null || password.length() < 8 || password.length() > 33) {
             throw new RuntimeException("Invalid password");
         }
     }

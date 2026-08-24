@@ -15,7 +15,10 @@ public class CreateUserFeature {
     private UserRepository userRepository;
 
     @Retryable(maxRetries = 3)
-    public UserResponseDTO criar(UserDomain userDomain) {
+    public CreateUserResponseDTO criar(CreateUserRequestDTO request) {
+
+        UserDomain userDomain = request.toUserDomain();
+
         if (userRepository.existsByUsername(userDomain.username())) {
             throw new RuntimeException("Username already exists");
         }
@@ -23,9 +26,8 @@ public class CreateUserFeature {
         user.setPassword(PasswordEncoder.md5(userDomain.password()));
         user.setUsername(userDomain.username());
         User userSaved = userRepository.save(user);
-        return new UserResponseDTO(
-                userSaved.getId(),
-                "Usuário cadastrado com sucesso"
+        return new CreateUserResponseDTO(
+                userSaved.getId()
         );
     }
 }
