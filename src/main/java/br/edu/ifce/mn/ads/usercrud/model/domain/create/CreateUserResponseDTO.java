@@ -1,4 +1,4 @@
-package br.edu.ifce.mn.ads.usercrud.model.domain;
+package br.edu.ifce.mn.ads.usercrud.model.domain.create;
 
 public record CreateUserResponseDTO(
         Long id

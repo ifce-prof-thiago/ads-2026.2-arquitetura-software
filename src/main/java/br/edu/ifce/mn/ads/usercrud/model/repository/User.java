@@ -1,4 +1,4 @@
-package br.edu.ifce.mn.ads.usercrud.model;
+package br.edu.ifce.mn.ads.usercrud.model.repository;
 
 import br.edu.ifce.mn.ads.usercrud.utils.PasswordEncoder;
 import jakarta.persistence.*;

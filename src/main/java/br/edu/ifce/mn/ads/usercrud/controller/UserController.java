@@ -1,7 +1,13 @@
 package br.edu.ifce.mn.ads.usercrud.controller;
 
-import br.edu.ifce.mn.ads.usercrud.model.*;
-import br.edu.ifce.mn.ads.usercrud.model.domain.*;
+import br.edu.ifce.mn.ads.usercrud.model.domain.create.CreateUserFeature;
+import br.edu.ifce.mn.ads.usercrud.model.domain.create.CreateUserRequestDTO;
+import br.edu.ifce.mn.ads.usercrud.model.domain.create.CreateUserResponseDTO;
+import br.edu.ifce.mn.ads.usercrud.model.domain.update.UpdateUserFeature;
+import br.edu.ifce.mn.ads.usercrud.model.domain.update.UpdateUserRequestDTO;
+import br.edu.ifce.mn.ads.usercrud.model.domain.update.UpdateUserResponseDTO;
+import br.edu.ifce.mn.ads.usercrud.model.repository.User;
+import br.edu.ifce.mn.ads.usercrud.model.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

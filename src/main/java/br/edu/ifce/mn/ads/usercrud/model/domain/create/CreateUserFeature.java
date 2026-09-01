@@ -1,8 +1,9 @@
-package br.edu.ifce.mn.ads.usercrud.model.domain;
+package br.edu.ifce.mn.ads.usercrud.model.domain.create;
 
 
-import br.edu.ifce.mn.ads.usercrud.model.User;
-import br.edu.ifce.mn.ads.usercrud.model.UserRepository;
+import br.edu.ifce.mn.ads.usercrud.model.repository.User;
+import br.edu.ifce.mn.ads.usercrud.model.repository.UserRepository;
+import br.edu.ifce.mn.ads.usercrud.model.domain.UserDomain;
 import br.edu.ifce.mn.ads.usercrud.utils.PasswordEncoder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.resilience.annotation.Retryable;

@@ -1,4 +1,6 @@
-package br.edu.ifce.mn.ads.usercrud.model.domain;
+package br.edu.ifce.mn.ads.usercrud.model.domain.create;
+
+import br.edu.ifce.mn.ads.usercrud.model.domain.UserDomain;
 
 public record CreateUserRequestDTO(
         String username,
